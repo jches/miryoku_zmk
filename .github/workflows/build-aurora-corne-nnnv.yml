@@ -1,0 +1,26 @@
+# Copyright 2022 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: 'Build SplitKB Aurora Corne with nice_nano_v2 nice_view'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["splitkb_aurora_corne_left nice_view_adapter nice_view", "splitkb_aurora_corne_right nice_view_adapter nice_view"]'
+      alphas: ColemakDH
+      nav: 'vi'
+      kconfig:
+        CONFIG_EC11=y
+        CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
+        CONFIG_ZMK_POINTING=y
+
+        # shiny
+        CONFIG_ZMK_DISPLAY=y
+
+        CONFIG_ZMK_RGB_UNDERGLOW=y
+        # 0=solid, 1=breathe, 3=spectrum, 3=swirl
+        CONFIG_ZMK_RGB_UNDERGLOW_EFF_START=3
+        CONFIG_ZMK_RGB_UNDERGLOW_BRT_START=10

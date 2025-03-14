@@ -4,3 +4,12 @@
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
+
+&led_strip {
+    chain-length = <27>;
+};
+
+&nice_view_spi {
+  cs-gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
+};
+
