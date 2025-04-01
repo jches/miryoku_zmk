@@ -1,6 +1,16 @@
 // Copyright 2022 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
+/ {
+  behaviors {
+    rot_sc_v: rotary_scroll_vertical {
+      compatible = "zmk,behavior-sensor-rotate";
+      #sensor-binding-cells = <0>;
+      bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+    };
+  };
+};
+
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
@@ -12,4 +22,3 @@
 &nice_view_spi {
   cs-gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
 };
-
