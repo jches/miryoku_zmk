@@ -7,16 +7,16 @@
 #if !defined (MIRYOKU_LAYER_LIST)
 
 #define MIRYOKU_LAYER_LIST \
-MIRYOKU_X(BASE,   "Base") \
-MIRYOKU_X(EXTRA,  "Extra") \
-MIRYOKU_X(TAP,    "Tap") \
-MIRYOKU_X(BUTTON, "Button") \
-MIRYOKU_X(NAV,    "Nav") \
-MIRYOKU_X(MOUSE,  "Mouse") \
-MIRYOKU_X(MEDIA,  "Media") \
-MIRYOKU_X(NUM,    "Num") \
-MIRYOKU_X(SYM,    "Sym") \
-MIRYOKU_X(FUN,    "Fun")
+MIRYOKU_X(BASE,   "Base",  sensor-bindings = <&inc_dec_kp PG_DN PG_UP &rot_sc_v>; ) \
+MIRYOKU_X(EXTRA,  "Extra", sensor-bindings = <&inc_dec_kp PG_DN PG_UP &rot_sc_v>; ) \
+MIRYOKU_X(TAP,    "Tap",    ) \
+MIRYOKU_X(BUTTON, "Button", ) \
+MIRYOKU_X(NAV,    "Nav",   sensor-bindings = <&inc_dec_kp PG_DN PG_UP &rot_sc_v>;   ) \
+MIRYOKU_X(MOUSE,  "Mouse", sensor-bindings = <&rot_sc_v &rot_sc_v>; ) \
+MIRYOKU_X(MEDIA,  "Media", sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP> ;) \
+MIRYOKU_X(NUM,    "Num",    ) \
+MIRYOKU_X(SYM,    "Sym",    ) \
+MIRYOKU_X(FUN,    "Fun",    )
 
 #define U_BASE   0
 #define U_EXTRA  1
